@@ -1,7 +1,5 @@
 = BodiesSimulation
 
-Here is developed the first project for the Concurrent and Distributed programming course.
-
 The parameters of the application are these:
 
 ```
