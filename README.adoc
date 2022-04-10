@@ -26,7 +26,11 @@ Usage: <main class> [options]
       Default: 0
 ```
 
-An example, after running the shadow jar task of Gradle, is the following: `java -jar build/libs/BodiesSimulation-1.0-all.jar -nSteps 20000 -nBodies 1000 -nWorkers 4 -guiEnabled`
+An example, after running the shadow jar task of Gradle, is the following: 
+
+```
+java -jar build/libs/BodiesSimulation-1.0-all.jar -nSteps 20000 -nBodies 1000 -nWorkers 4 -guiEnabled
+```
 
 == Runnning JPF
 
