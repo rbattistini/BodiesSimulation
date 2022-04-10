@@ -3,7 +3,7 @@ Here is developed the first project for the Concurrent and Distributed programmi
 
 == Runnning JPF
 
-1. `docker pull gianlucaaguzzi/pcd-jpf:lates`. Dockerfile hosted link:https://gist.github.com/cric96/f0e9c2c391aefc292cee5e0d7b74c242[here].
+1. `docker pull gianlucaaguzzi/pcd-jpf:latest`. Dockerfile hosted link:https://gist.github.com/cric96/f0e9c2c391aefc292cee5e0d7b74c242[here].
 2. `java -jar libs/RunJPF.jar +classpath=build/classes/java/main/ TestBodiesSimulation.jpf`
 
 == Computing the speedup
