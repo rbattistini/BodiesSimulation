@@ -26,6 +26,8 @@ Usage: <main class> [options]
       Default: 0
 ```
 
+Example, after running the shadow jar task of Gradle: `java -jar build/libs/BodiesSimulation-1.0-all.jar -nSteps 20000 -nBodies 1000 -nWorkers 4 -guiEnabled`
+
 == Runnning JPF
 
 If using java 8 jpf-core is already included with its jar in this repo. To run JPF on the simulation just execute: `java -jar jpf-core/build/RunJPF.jar +classpath=build/classes/java/main/ TestBodiesSimulation.jpf`
