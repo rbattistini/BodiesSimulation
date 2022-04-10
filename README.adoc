@@ -3,7 +3,7 @@ Here is developed the first project for the Concurrent and Distributed programmi
 
 == Runnning JPF
 
-If using java 8 jpf-core is already included with its jar in this repo. To run JPF on the simulation just run: `java -jar jpf-core/build/RunJPF.jar +classpath=build/classes/java/main/ TestBodiesSimulation.jpf`
+If using java 8 jpf-core is already included with its jar in this repo. To run JPF on the simulation just execute: `java -jar jpf-core/build/RunJPF.jar +classpath=build/classes/java/main/ TestBodiesSimulation.jpf`
 
 Otherwise with docker on a Unix-like system:
 
