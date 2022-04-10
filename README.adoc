@@ -2,7 +2,7 @@
 
 Here is developed the first project for the Concurrent and Distributed programming course.
 
-The parameters of the application are the following:
+The parameters of the application are these:
 
 ```
 Usage: <main class> [options]
