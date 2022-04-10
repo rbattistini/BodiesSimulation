@@ -1,3 +1,27 @@
+# Gradle
+build/
+.gradle/
+
+# Intellij IDEA
+*.iml
+*.ipr
+
+# User-specific stuff:
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+.idea/ant.xml
+
+# Sensitive or high-churn files:
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+
+out/
+
 # Compiled class file
 *.class
 
