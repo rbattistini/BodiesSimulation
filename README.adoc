@@ -36,7 +36,7 @@ Otherwise with docker on a Unix-like system:
 2. `docker run -v $(pwd):/home -it gianlucaaguzzi/pcd-jpf:latest /bin/bash`
 3. Then in the interactive shell: `java -jar $JPF ./your/path/to/file.jpf`
 
-The dockerfile is hosted link:6[here].
+The dockerfile is hosted link:https://gist.github.com/cric96/f0e9c2c391aefc292cee5e0d7b74c242[here].
 
 ++++
 <details>
