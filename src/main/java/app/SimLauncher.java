@@ -44,20 +44,27 @@ public class SimLauncher {
 
         @Parameter(names = "-debug", description = "Debug mode")
         private boolean debugLogs = false;
+
+        @Parameter(names = "--help", help = true)
+        private boolean help = false;
     }
 
-    public static void main(String... args) throws InterruptedException {
-        Args arguments = new Args();
-        JCommander.newBuilder()
-                .addObject(arguments)
-                .build()
-                .parse(args);
+    public static void main(String... argv) throws InterruptedException {
+        Args args = new Args();
+        JCommander jct = JCommander.newBuilder()
+                .addObject(args)
+                .build();
+        jct.parse(argv);
+        if (args.help) {
+            jct.usage();
+            System.exit(0);
+        }
 
-        int nSteps = arguments.nSteps;
-        int nBodies = arguments.nBodies;
-        int nWorkers = arguments.nWorkers;
-        boolean debugLogs = arguments.debugLogs;
-        boolean guiEnabled = arguments.guiEnabled;
+        int nSteps = args.nSteps;
+        int nBodies = args.nBodies;
+        int nWorkers = args.nWorkers;
+        boolean debugLogs = args.debugLogs;
+        boolean guiEnabled = args.guiEnabled;
 
         InRangeChecker pChecker = (value, min, max) -> {
             if (value < min || value > max) {

@@ -10,14 +10,14 @@ import app.mvc.model.SimulationModel;
 
 public class SimLauncher {
 
-    private static final double BOUNDARY_WIDTH = 20;
-    private static final double BOUNDARY_HEIGHT = 20;
+    private static final double BOUNDARY_WIDTH = 1;
+    private static final double BOUNDARY_HEIGHT = 1;
 
     public static void main(String... args) throws InterruptedException {
         Verify.beginAtomic();
-        int nSteps = 2;
-        int nBodies = 2;
-        int nWorkers = 2;
+        int nSteps = 3;
+        int nBodies = 6;
+        int nWorkers = 6;
 
         SimModel model = new SimulationModel(BOUNDARY_WIDTH, BOUNDARY_HEIGHT, nSteps, nBodies);
         StartSynchonizer synchronizer = new StartSynchonizer();
