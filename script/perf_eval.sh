@@ -20,7 +20,7 @@ SCRIPT_DATA=$JAR_NAME".csv"
 
 printf '"Threads", "Time in microseconds"\n' >> "${SCRIPT_DATA}"
 
-for p in {1.."$CORES"}; do
+for p in {8.."$CORES"}; do
     for _ in $(seq "$TRIES"); do
         EXEC_TIME="$( java -jar "$JAR_NAME" -nSteps "$NSTEPS" -nBodies "$NBODIES" -nWorkers "$p" )"
         EXEC_TIME=$(echo "$EXEC_TIME" | sed 's/time: //')
