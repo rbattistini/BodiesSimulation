@@ -1,0 +1,75 @@
+= BodiesSimulation
+
+Here is developed the first project for the Concurrent and Distributed programming course.
+
+The parameters of the application are the following:
+
+```
+Usage: <main class> [options]
+  Options:
+    --help
+
+    -debug
+      Debug mode
+      Default: false
+    -guiEnabled
+      GUI or command line app
+      Default: false
+    -nBodies
+      Number of bodies
+      Default: 0
+    -nSteps
+      Steps of the simulation
+      Default: 0
+    -nWorkers
+      Number of threads to use
+      Default: 0
+```
+
+== Runnning JPF
+
+If using java 8 jpf-core is already included with its jar in this repo. To run JPF on the simulation just execute: `java -jar jpf-core/build/RunJPF.jar +classpath=build/classes/java/main/ TestBodiesSimulation.jpf`
+
+Otherwise with docker on a Unix-like system:
+
+1. `docker pull gianlucaaguzzi/pcd-jpf:latest`
+2. `docker run -v $(pwd):/home -it gianlucaaguzzi/pcd-jpf:latest /bin/bash`
+3. Then in the interactive shell: `java -jar $JPF ./your/path/to/file.jpf`
+
+The dockerfile is hosted link:6[here].
+
+++++
+<details>
+<summary>My result, with 2 steps, 2 bodies and 2 workers</summary>
+<pre>
+JavaPathfinder core system v8.0 (rev 121f36476db0a420769058fa7ce56554cb6869c7) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+jpf.SimLauncher.main()
+
+====================================================== search started: 4/10/22 1:13 PM
+
+====================================================== results
+no errors detected
+
+====================================================== statistics
+elapsed time:       00:03:05
+states:             new=1360601,visited=2859696,backtracked=4220297,end=1496
+search:             maxDepth=752,constraints=0
+choice generators:  thread=1360601 (signal=77039,lock=315586,sharedRef=839138,threadApi=2858,reschedule=76600), data=0
+heap:               new=313984,released=431170,maxLive=563,gcCycles=3577726
+instructions:       44901131
+max memory:         673MB
+loaded code:        classes=107,methods=2202
+
+====================================================== search finished: 4/10/22 1:16 PM
+</pre>
+
+</details>
+++++
+
+== Computing the speedup
+
+1. To get a csv under `build/libs` with the execution time of the simulation in milliseconds: `./perf_eval.sh build/libs/BodiesSimulation-1.0-all.jar <nSteps> <nBodies> <nTries>`
+2. To create the graphs of speedup in a python venv using matplotlib: `python3 -m venv .venv`, `source .venv/bin/activate`, `pip install -r requirements.txt`, `python3 plot_speedup.py <input_csv_filename>`.
