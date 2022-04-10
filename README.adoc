@@ -1,5 +1,30 @@
 = BodiesSimulation
+
 Here is developed the first project for the Concurrent and Distributed programming course.
+
+The parameters of the application are the following:
+
+```
+Usage: <main class> [options]
+  Options:
+    --help
+
+    -debug
+      Debug mode
+      Default: false
+    -guiEnabled
+      GUI or command line app
+      Default: false
+    -nBodies
+      Number of bodies
+      Default: 0
+    -nSteps
+      Steps of the simulation
+      Default: 0
+    -nWorkers
+      Number of threads to use
+      Default: 0
+```
 
 == Runnning JPF
 
