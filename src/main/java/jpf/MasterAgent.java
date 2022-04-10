@@ -16,7 +16,6 @@ import java.util.Set;
 
 public class MasterAgent extends Thread {
 
-	private static final int MS_BETWEEN_FRAMES = 1;
 	private final SimModel model;
 	private final Flag stopFlag;
 	private final StartSynchonizer synchonizer;
@@ -64,8 +63,6 @@ public class MasterAgent extends Thread {
 
 		while (!maxStepsReached && stopFlag.isNotSet()) {
 			try {
-	   			long tIterStart = System.currentTimeMillis();
-
 				Verify.beginAtomic();
 	       		taskLatch.reset();
 				Verify.endAtomic();
@@ -95,24 +92,7 @@ public class MasterAgent extends Thread {
 
 				/* update the model */
 				maxStepsReached = model.advanceVirtualTime();
-	       		/* update the view */
-	       		if (stopFlag.isNotSet()) {
-					long tIterEnd = System.currentTimeMillis();
-					long tIterElapsed = tIterEnd - tIterStart;
-					waitForNextFrame(tIterStart);
-	      		}
 			} catch (Exception ex) {
-				ex.printStackTrace();
-			}
-		}
-	}
-
-	private void waitForNextFrame(final long current) {
-		final long dt = System.currentTimeMillis() - current;
-		if (dt < MS_BETWEEN_FRAMES) {
-			try {
-				Thread.sleep(MS_BETWEEN_FRAMES - dt);
-			} catch (InterruptedException ex) {
 				ex.printStackTrace();
 			}
 		}
