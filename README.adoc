@@ -1,0 +1,12 @@
+= BodiesSimulation
+Here is developed the first project for the Concurrent and Distributed programming course.
+
+== Runnning JPF
+
+1. `docker pull gianlucaaguzzi/pcd-jpf:lates`. Dockerfile hosted link:https://gist.github.com/cric96/f0e9c2c391aefc292cee5e0d7b74c242[here].
+2. `java -jar libs/RunJPF.jar +classpath=build/classes/java/main/ TestBodiesSimulation.jpf`
+
+== Computing the speedup
+
+1. To get a csv under `build/libs` with the execution time of the simulation in milliseconds: `./perf_eval.sh build/libs/BodiesSimulation-1.0-all.jar <nSteps> <nBodies> <nTries>`
+2. To create the graphs of speedup in a python venv using matplotlib: `python3 -m venv .venv`, `pip install -r requirements.txt`, `python3 compute_speedup.py`.
