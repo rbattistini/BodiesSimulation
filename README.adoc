@@ -74,4 +74,4 @@ loaded code:        classes=107,methods=2202
 == Computing the speedup
 
 1. To get a csv under `build/libs` with the execution time of the simulation in milliseconds: `./perf_eval.sh build/libs/BodiesSimulation-1.0-all.jar <nSteps> <nBodies> <nTries>`
-2. To create the graphs of speedup in a python venv using matplotlib: `python3 -m venv .venv`, `source .venv/bin/activate`, `pip install -r requirements.txt`, `python3 plot_speedup.py <input_csv_filename>`.
+2. To generate the graphs of speedup in a python venv using matplotlib: `python3 -m venv .venv`, `source .venv/bin/activate`, `pip install -r requirements.txt`, `python3 plot_speedup.py <input_csv_filename>`.
