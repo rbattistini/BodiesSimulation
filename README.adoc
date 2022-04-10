@@ -13,9 +13,10 @@ Otherwise with docker on a Unix-like system:
 
 The dockerfile is hosted link:6[here].
 
-My result, with 2 steps, 2 bodies and 2 workers, is the following:
-
-```
+++++
+<details>
+<summary>My result, with 2 steps, 2 bodies and 2 workers</summary>
+<pre>
 JavaPathfinder core system v8.0 (rev 121f36476db0a420769058fa7ce56554cb6869c7) - (C) 2005-2014 United States Government. All rights reserved.
 
 
@@ -38,7 +39,10 @@ max memory:         673MB
 loaded code:        classes=107,methods=2202
 
 ====================================================== search finished: 4/10/22 1:16 PM
-```
+</pre>
+
+</details>
+++++
 
 == Computing the speedup
 
