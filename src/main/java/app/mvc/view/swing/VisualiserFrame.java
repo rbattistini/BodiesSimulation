@@ -91,7 +91,7 @@ public class VisualiserFrame extends JFrame implements ActionListener, Frame {
     @Override
     public void updateImage(List<Body> bodies, double vt, long iter, Boundary bounds){
         try {
-            SwingUtilities.invokeAndWait(() -> {
+            SwingUtilities.invokeLater(() -> {
                 panel.updateImage(bodies, vt, iter, bounds);
                 repaint();
             });
@@ -103,7 +103,7 @@ public class VisualiserFrame extends JFrame implements ActionListener, Frame {
     @Override
     public void display(){
         try {
-            SwingUtilities.invokeAndWait(() -> this.setVisible(true));
+            SwingUtilities.invokeLater(() -> this.setVisible(true));
         } catch (InterruptedException | InvocationTargetException e) {
             e.printStackTrace();
         }
