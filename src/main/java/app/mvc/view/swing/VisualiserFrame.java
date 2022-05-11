@@ -90,23 +90,15 @@ public class VisualiserFrame extends JFrame implements ActionListener, Frame {
 
     @Override
     public void updateImage(List<Body> bodies, double vt, long iter, Boundary bounds){
-        try {
-            SwingUtilities.invokeLater(() -> {
-                panel.updateImage(bodies, vt, iter, bounds);
-                repaint();
-            });
-        } catch (InterruptedException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
+        SwingUtilities.invokeLater(() -> {
+            panel.updateImage(bodies, vt, iter, bounds);
+            repaint();
+        });
     }
 
     @Override
     public void display(){
-        try {
-            SwingUtilities.invokeLater(() -> this.setVisible(true));
-        } catch (InterruptedException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
+        SwingUtilities.invokeLater(() -> this.setVisible(true));
     }
 
 }
